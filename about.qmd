@@ -1,6 +1,6 @@
 ---
 title: "About me"
-image: ./_site/1681184051634.jfif
+image: 1681184051634.jfif
 about:
   template: jolla
   links:
