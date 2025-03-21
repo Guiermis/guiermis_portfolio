@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guilherme Rodrigues",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 16, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nMonitor Flex Express\n\n\n\n\n\n\nproject\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\nGuilherme Rodrigues\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Monitor Flex Express",
+    "section": "",
+    "text": "Monitor Flex Express is a Python tool designed to automate data transformation for Monitor Flex reports. It simplifies the process of cleaning and generating data for dashboards used by Grupo Ric, ensuring fast and accurate report creation."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#features",
+    "href": "posts/post-with-code/index.html#features",
+    "title": "Monitor Flex Express",
+    "section": "Features",
+    "text": "Features\n\nFast data transformation: Meets the requirements from our dashboards at Grupo Ric.\nMultiple report generation: Allows different analyses beyond just cleaning data for the dashboard.\nUser-friendly UI: Cool color scheme and easy-to-use interface."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#planned-features",
+    "href": "posts/post-with-code/index.html#planned-features",
+    "title": "Monitor Flex Express",
+    "section": "Planned Features",
+    "text": "Planned Features\n\nGraphs generation: Automatically generate visualizations from the data.\nEmail reports: Create a text report that can be sent via email.\nExcel file appending: Append data to existing Excel files, streamlining data updates."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#installation",
+    "href": "posts/post-with-code/index.html#installation",
+    "title": "Monitor Flex Express",
+    "section": "Installation",
+    "text": "Installation\n\nClone the repository:\ngit clone https://github.com/Guiermis/MonitorFlexExpress.git"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#run-the-code",
+    "href": "posts/post-with-code/index.html#run-the-code",
+    "title": "Monitor Flex Express",
+    "section": "Run the code:",
+    "text": "Run the code:\npython FlexExpressMonitor.py \n\nFollow the instructions on the UI, including inserting values and selecting the file.\nThe program will handle the rest automatically, generating your report in no time!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m Guilherme, a Data Science undergraduate and Junior Data Analyst with hands-on experience in collecting and analyzing CRM and marketing data. My work spans across marketing and platform management, where I’ve applied my skills in SQL, Python, and data visualization to generate insights that inform decision-making and optimize performance.\n\nSince 2020, I’ve developed a strong foundation in data analysis, working with databases and programming to transform raw data into actionable insights. I’m continuously refining my expertise in data science, data analysis, and data engineering, with a focus on delivering impactful solutions that align with business goals.\n\nI’m always eager to learn and connect with professionals in data, technology, and analytics to collaborate on innovative projects. If you share a passion for leveraging data to solve complex problems, I’d love to connect and exchange ideas."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  }
+]
