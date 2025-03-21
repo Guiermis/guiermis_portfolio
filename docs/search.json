@@ -1,10 +1,24 @@
 [
   {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Guilherme Rodrigues",
     "section": "",
     "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 16, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nMonitor Flex Express\n\n\n\n\n\n\nproject\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\nGuilherme Rodrigues\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m Guilherme, a Data Science undergraduate and Junior Data Analyst with hands-on experience in collecting and analyzing CRM and marketing data. My work spans across marketing and platform management, where I’ve applied my skills in SQL, Python, and data visualization to generate insights that inform decision-making and optimize performance.\n\nSince 2020, I’ve developed a strong foundation in data analysis, working with databases and programming to transform raw data into actionable insights. I’m continuously refining my expertise in data science, data analysis, and data engineering, with a focus on delivering impactful solutions that align with business goals.\n\nI’m always eager to learn and connect with professionals in data, technology, and analytics to collaborate on innovative projects. If you share a passion for leveraging data to solve complex problems, I’d love to connect and exchange ideas."
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -40,19 +54,5 @@
     "title": "Monitor Flex Express",
     "section": "Run the code:",
     "text": "Run the code:\npython FlexExpressMonitor.py \n\nFollow the instructions on the UI, including inserting values and selecting the file.\nThe program will handle the rest automatically, generating your report in no time!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About me",
-    "section": "",
-    "text": "I’m Guilherme, a Data Science undergraduate and Junior Data Analyst with hands-on experience in collecting and analyzing CRM and marketing data. My work spans across marketing and platform management, where I’ve applied my skills in SQL, Python, and data visualization to generate insights that inform decision-making and optimize performance.\n\nSince 2020, I’ve developed a strong foundation in data analysis, working with databases and programming to transform raw data into actionable insights. I’m continuously refining my expertise in data science, data analysis, and data engineering, with a focus on delivering impactful solutions that align with business goals.\n\nI’m always eager to learn and connect with professionals in data, technology, and analytics to collaborate on innovative projects. If you share a passion for leveraging data to solve complex problems, I’d love to connect and exchange ideas."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   }
 ]
