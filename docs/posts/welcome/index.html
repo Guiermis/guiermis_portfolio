@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tristan O’Malley">
-<meta name="dcterms.date" content="2025-03-16">
+<meta name="author" content="Guilherme Rodrigues">
+<meta name="dcterms.date" content="2025-03-25">
 
-<title>Welcome To My Blog – Guilherme Rodrigues</title>
+<title>CRM Data Pipeline – Guilherme Rodrigues</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,9 +118,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
+      <h1 class="title">CRM Data Pipeline</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">project</div>
+                <div class="quarto-category">code</div>
               </div>
                   </div>
   </div>
@@ -131,14 +132,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Tristan O’Malley </p>
+               <p>Guilherme Rodrigues </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 16, 2025</p>
+        <p class="date">March 25, 2025</p>
       </div>
     </div>
     
@@ -157,11 +158,78 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+<section id="crm-data-pipeline-automated-database-synchronization-for-power-bi" class="level3">
+<h3 class="anchored" data-anchor-id="crm-data-pipeline-automated-database-synchronization-for-power-bi"><strong>CRM Data Pipeline: Automated Database Synchronization for Power BI</strong></h3>
+<p><strong>Project Overview:</strong><br>
+This Python script automates the daily ETL (Extract, Transform, Load) process for a PostgreSQL database that powers a CRM analytics dashboard in Power BI. It integrates data from multiple sources (APIs, Google Sheets, Excel) to provide real-time insights into sales pipelines, client classifications, and revenue tracking for a media advertising platform.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><p><strong>Automated Data Synchronization:</strong></p>
+<ul>
+<li><p>Pulls data from the AdSim CRM API, Google Sheets, and local Excel files.</p></li>
+<li><p>Identifies new records and updates existing ones using a diff-based approach (<code>find_differences()</code>).</p></li>
+<li><p>Handles 20+ relational tables (deals, organizations, products, etc.) with complex dependencies.</p></li>
+</ul></li>
+<li><p><strong>Data Quality &amp; Integrity:</strong></p>
+<ul>
+<li><p>Robust type conversion (e.g., <code>Int64</code> for large IDs) and NULL/Nan handling.</p></li>
+<li><p>Dynamic client classification (“New Client”, “Recurring”, “Seasonal”).</p></li>
+<li><p>Cross-source validation (e.g., reconciling executive names between CRM and sales sheets).</p></li>
+</ul></li>
+<li><p><strong>Performance Optimizations:</strong></p>
+<ul>
+<li><p>Batch SQL operations with <code>psycopg2.extras.execute_batch</code>.</p></li>
+<li><p>Parallel processing for API calls and data transformations.</p></li>
+<li><p>Incremental updates (only processes changes from the last 45 minutes).</p></li>
+</ul></li>
+<li><p><strong>Monitoring &amp; Error Handling:</strong></p>
+<ul>
+<li><p>Detailed logging with timestamps and operation status.</p></li>
+<li><p>JSON error reports saved to a <code>reports/</code> directory.</p></li>
+<li><p>Email-ready error summaries (via SMTP integration).</p></li>
+</ul></li>
+</ul>
+<p><strong>Technical Stack:</strong></p>
+<ul>
+<li><p><strong>Python Libraries:</strong></p>
+<ul>
+<li><p><code>pandas</code> for data wrangling.</p></li>
+<li><p><code>psycopg2</code> and SQLAlchemy for PostgreSQL interactions.</p></li>
+<li><p><code>gspread</code> for Google Sheets integration.</p></li>
+</ul></li>
+<li><p><strong>APIs:</strong> AdSim CRM API (REST/NDJSON).</p></li>
+<li><p><strong>Database:</strong> PostgreSQL with optimized schemas for Power BI.</p></li>
+</ul>
+<p><strong>My Contributions:</strong></p>
+<ul>
+<li><p>Designed a <strong>scalable diff algorithm</strong> to minimize database writes by comparing API data with existing records.</p></li>
+<li><p>Built a <strong>client classification system</strong> using temporal logic (e.g., “Recurring” = deals within 18 months).</p></li>
+<li><p>Implemented <strong>data reconciliation rules</strong> for inconsistent sources (e.g., executive name mappings across 5+ platforms).</p></li>
+<li><p>Reduced manual reporting effort by <strong>90%</strong> through full automation.</p></li>
+</ul>
+<p><strong>Business Impact:</strong></p>
+<ul>
+<li><p>Enabled real-time tracking of <strong>2 thousand monthly</strong> advertising deals.</p></li>
+<li><p>Improved sales executive management of CRM Pipeline.</p></li>
+<li><p>Reduced data discrepancies between CRM and financial systems by <strong>45%</strong>.</p></li>
+</ul>
+<p><strong>Code Highlights:</strong></p>
+<pre><code># Example of the diff-based update logic 
+def find_differences(df1, df2, id_column, columns_to_check):     
+"""Identifies rows to update/insert by comparing DataFrames."""    
+merged = pd.merge(df1, df2, on=id_column, how='outer', suffixes=('_old', '_new'))    
+# ... (handles NaN/NULL edge cases)    
+return {"rows_to_update": changed_rows, "rows_to_insert": new_rows}</code></pre>
+<p><strong>Why This Project?</strong><br>
+Demonstrates my ability to:</p>
+<ul>
+<li><p>Design <strong>end-to-end data pipelines</strong> for business intelligence.</p></li>
+<li><p>Solve <strong>real-world data consistency challenges</strong> (e.g., name mismatches, API limitations).</p></li>
+<li><p>Balance <strong>performance</strong> with <strong>data integrity</strong> in high-volume environments.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

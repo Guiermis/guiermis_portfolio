@@ -1,12 +1,98 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2025-03-16"
-categories: [news]
+title: "CRM Data Pipeline"
+author: "Guilherme Rodrigues"
+date: "2025-03-25"
+categories: [project, code]
+image: thumbnail.jpg
 ---
 
-This is the first post in a Quarto blog. Welcome!
+### **CRM Data Pipeline: Automated Database Synchronization for Power BI**
 
-![](thumbnail.jpg)
+**Project Overview:**\
+This Python script automates the daily ETL (Extract, Transform, Load) process for a PostgreSQL database that powers a CRM analytics dashboard in Power BI. It integrates data from multiple sources (APIs, Google Sheets, Excel) to provide real-time insights into sales pipelines, client classifications, and revenue tracking for a media advertising platform.
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+**Key Features:**
+
+-   **Automated Data Synchronization:**
+
+    -   Pulls data from the AdSim CRM API, Google Sheets, and local Excel files.
+
+    -   Identifies new records and updates existing ones using a diff-based approach (`find_differences()`).
+
+    -   Handles 20+ relational tables (deals, organizations, products, etc.) with complex dependencies.
+
+-   **Data Quality & Integrity:**
+
+    -   Robust type conversion (e.g., `Int64` for large IDs) and NULL/Nan handling.
+
+    -   Dynamic client classification ("New Client", "Recurring", "Seasonal").
+
+    -   Cross-source validation (e.g., reconciling executive names between CRM and sales sheets).
+
+-   **Performance Optimizations:**
+
+    -   Batch SQL operations with `psycopg2.extras.execute_batch`.
+
+    -   Parallel processing for API calls and data transformations.
+
+    -   Incremental updates (only processes changes from the last 45 minutes).
+
+-   **Monitoring & Error Handling:**
+
+    -   Detailed logging with timestamps and operation status.
+
+    -   JSON error reports saved to a `reports/` directory.
+
+    -   Email-ready error summaries (via SMTP integration).
+
+**Technical Stack:**
+
+-   **Python Libraries:**
+
+    -   `pandas` for data wrangling.
+
+    -   `psycopg2` and SQLAlchemy for PostgreSQL interactions.
+
+    -   `gspread` for Google Sheets integration.
+
+-   **APIs:** AdSim CRM API (REST/NDJSON).
+
+-   **Database:** PostgreSQL with optimized schemas for Power BI.
+
+**My Contributions:**
+
+-   Designed a **scalable diff algorithm** to minimize database writes by comparing API data with existing records.
+
+-   Built a **client classification system** using temporal logic (e.g., "Recurring" = deals within 18 months).
+
+-   Implemented **data reconciliation rules** for inconsistent sources (e.g., executive name mappings across 5+ platforms).
+
+-   Reduced manual reporting effort by **90%** through full automation.
+
+**Business Impact:**
+
+-   Enabled real-time tracking of **2 thousand monthly** advertising deals.
+
+-   Improved sales executive management of CRM Pipeline.
+
+-   Reduced data discrepancies between CRM and financial systems by **45%**.
+
+**Code Highlights:**
+
+```         
+# Example of the diff-based update logic 
+def find_differences(df1, df2, id_column, columns_to_check):     
+"""Identifies rows to update/insert by comparing DataFrames."""    
+merged = pd.merge(df1, df2, on=id_column, how='outer', suffixes=('_old', '_new'))    
+# ... (handles NaN/NULL edge cases)    
+return {"rows_to_update": changed_rows, "rows_to_insert": new_rows}
+```
+
+**Why This Project?**\
+Demonstrates my ability to:
+
+-   Design **end-to-end data pipelines** for business intelligence.
+
+-   Solve **real-world data consistency challenges** (e.g., name mismatches, API limitations).
+
+-   Balance **performance** with **data integrity** in high-volume environments.

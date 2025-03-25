@@ -158,39 +158,73 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Monitor Flex Express is a Python tool designed to automate data transformation for Monitor Flex reports. It simplifies the process of cleaning and generating data for dashboards used by Grupo Ric, ensuring fast and accurate report creation.</p>
-<section id="features" class="level2">
-<h2 class="anchored" data-anchor-id="features">Features</h2>
+<section id="monitor-flex-express-automated-tv-advertising-data-processing-tool" class="level3">
+<h3 class="anchored" data-anchor-id="monitor-flex-express-automated-tv-advertising-data-processing-tool"><strong>Monitor Flex Express: Automated TV Advertising Data Processing Tool</strong></h3>
+<p><strong>Project Overview:</strong><br>
+Monitor Flex Express is a Python-based application designed to automate the processing and analysis of TV advertising data. It streamlines the workflow for media monitoring by cleaning, categorizing, and generating detailed reports from raw Excel and HTML files. The tool integrates with Google Sheets for real-time data updates and provides customizable outputs for regional and client-specific insights.</p>
+<p><strong>Key Features:</strong></p>
 <ul>
-<li><p><strong>Fast data transformation</strong>: Meets the requirements from our dashboards at Grupo Ric.</p></li>
-<li><p><strong>Multiple report generation</strong>: Allows different analyses beyond just cleaning data for the dashboard.</p></li>
-<li><p><strong>User-friendly UI</strong>: Cool color scheme and easy-to-use interface.</p></li>
+<li><p><strong>Data Processing:</strong></p>
+<ul>
+<li><p>Cleans and standardizes raw advertising data from multiple sources (Excel, HTML).</p></li>
+<li><p>Corrects mismatched client names, locations, and categories.</p></li>
+<li><p>Filters out irrelevant entries (e.g., radio, political campaigns).</p></li>
+</ul></li>
+<li><p><strong>Automated Reporting:</strong></p>
+<ul>
+<li><p>Generates pivot tables and segmented reports by region (e.g., Curitiba, Maringá).</p></li>
+<li><p>Calculates projected ad values with dynamic discounting logic.</p></li>
+<li><p>Distributes aggregated values evenly across unmatched records.</p></li>
+</ul></li>
+<li><p><strong>Google Sheets Integration:</strong></p>
+<ul>
+<li><p>Pulls coverage and client data from Google Sheets for real-time validation.</p></li>
+<li><p>Uses <code>gspread</code> and Google API for seamless authentication.</p></li>
+</ul></li>
+<li><p><strong>User-Friendly Interface:</strong></p>
+<ul>
+<li><p>Built with <code>PySimpleGUI</code> for an intuitive file selection and configuration panel.</p></li>
+<li><p>Disays real-time progress updates during processing.</p></li>
+</ul></li>
 </ul>
-</section>
-<section id="planned-features" class="level2">
-<h2 class="anchored" data-anchor-id="planned-features">Planned Features</h2>
+<p><strong>Technologies Used:</strong></p>
 <ul>
-<li><p><strong>Graphs generation</strong>: Automatically generate visualizations from the data.</p></li>
-<li><p><strong>Email reports</strong>: Create a text report that can be sent via email.</p></li>
-<li><p><strong>Excel file appending</strong>: Append data to existing Excel files, streamlining data updates.</p></li>
+<li><p><strong>Python Libraries:</strong></p>
+<ul>
+<li><p><code>pandas</code> for data manipulation.</p></li>
+<li><p><code>openpyxl</code> for Excel file handling.</p></li>
+<li><p><code>gspread</code> for Google Sheets integration.</p></li>
+<li><p><code>PySimpleGUI</code> for the graphical interface.</p></li>
+</ul></li>
+<li><p><strong>Concurrency:</strong> ThreadPoolExecutor for parallel file loading.</p></li>
+<li><p><strong>Error Handling:</strong> Robust validation for file paths, data types, and edge cases.</p></li>
 </ul>
-</section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<ol type="1">
-<li><p>Clone the repository:</p>
-<pre><code>git clone https://github.com/Guiermis/MonitorFlexExpress.git </code></pre></li>
-</ol>
-</section>
-<section id="run-the-code" class="level2">
-<h2 class="anchored" data-anchor-id="run-the-code">Run the code:</h2>
-<pre><code>python FlexExpressMonitor.py </code></pre>
+<p><strong>My Contributions:</strong></p>
 <ul>
-<li><p>Follow the instructions on the UI, including inserting values and selecting the file.</p></li>
-<li><p>The program will handle the rest automatically, generating your report in no time!</p></li>
+<li><p>Designed the data pipeline to handle heterogeneous input formats (Excel, HTML).</p></li>
+<li><p>Implemented dynamic discounting logic based on client, region, and ad type.</p></li>
+<li><p>Developed a mapping system to reconcile mismatched client names across datasets.</p></li>
+<li><p>Optimized performance with multithreading and memory-efficient operations.</p></li>
+</ul>
+<p><strong>Impact:</strong></p>
+<ul>
+<li><p>Reduced manual data processing time by <strong>90%</strong> for monthly reports.</p></li>
+<li><p>Improved accuracy by automating error-prone categorization tasks.</p></li>
+<li><p>Enabled regional teams to access tailored insights instantly.</p></li>
+</ul>
+<p><strong>Code Repository:</strong><br>
+<code>git clone https://github.com/Guiermis/MonitorFlexExpress.git</code></p>
+<section id="why-this-project" class="level4">
+<h4 class="anchored" data-anchor-id="why-this-project"><strong>Why This Project?</strong></h4>
+<p>This tool showcases my ability to:</p>
+<ul>
+<li><p>Solve real-world business problems with automation.</p></li>
+<li><p>Work with diverse data sources and APIs.</p></li>
+<li><p>Balance usability with complex backend logic.</p></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
